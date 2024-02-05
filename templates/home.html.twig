@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<br>
+<a href="{{path('todo_form')}}">Créer une todo</a>
+<br>
+
+<ul>
+{% for todo in todos %}
+    <li>
+        <span> {{ todo.id }} </span>
+        <span> {{ todo.content }} </span>
+        <span> {{ todo.createdAt | date() }} </span>
+        <span> {{ todo.done }} </span>
+        <a href="{{ path('todo_edit', {id: todo.id }) }}">Edit</a>
+        <a href="{{ path('todo_remove', {id: todo.id }) }}">Suprimer</a>
+
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

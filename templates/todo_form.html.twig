@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+  <style>
+  .form-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .form-row {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 15px;
+  }
+
+  .form-row label {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .form-row input {
+    background: #eee;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 15px;
+  }
+
+  .form-row select {
+    padding: 10px 15px;
+  }
+
+  .form-row ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 5px;
+  }
+
+  .form-row ul li {
+    font-size: 12px;
+    font-weight: 700;
+    color: #c0392b;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    background-color: #3498db;
+  }
+  </style>
+
+
+  {{ form_start(form) }}
+  <div class="form-container">
+    {{ form_rest(form) }}
+    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+  </div>
+  {{ form_end(form) }}
+
+{% endblock %}
